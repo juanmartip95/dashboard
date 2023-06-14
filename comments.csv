@@ -1,0 +1,23 @@
+comments,sentiment,date,source
+"Great customer service from my bank, always prompt and helpful!",1,2022-01-02,Twitter
+"I'm really frustrated with this bank's online banking platform. It's slow and difficult to use.",0,2022-01-03,Facebook
+"Just received an unexpected refund from my bank - what a nice surprise!",1,2022-01-05,Email
+"I've been a customer of this bank for years and I've never had any problems. Highly recommended!",1,2022-01-07,Twitter
+"I can't believe this bank is charging such high fees for overdrafts. Not cool.",0,2022-01-08,Reddit
+"I've been trying to get in touch with customer support for hours and can't get through. This is ridiculous.",0,2022-01-10,Twitter
+"I appreciate the personalized service I get from my local bank branch. They always remember my name!",1,2022-01-12,Facebook
+"I just had a really bad experience with this bank's fraud department. They didn't take my concerns seriously at all.",0,2022-01-14,Twitter
+"I love the rewards program from this bank. I get so many cashback bonuses!",1,2022-01-16,Email
+"I had to wait on hold for over an hour just to speak to a representative. This is not acceptable.",0,2022-01-18,Twitter
+"I had a problem with my account and the bank's online chat support was very helpful in resolving it quickly.",1,2022-01-20,Facebook
+"I'm really disappointed with the new fees this bank is adding. It feels like they're trying to nickel and dime their customers.",0,2022-01-22,Reddit
+"I always get great rates on loans from this bank. It's one of the reasons I've stayed a customer for so long.",1,2022-01-24,Twitter
+"This bank has the best mobile app I've ever used. It's so easy to manage my account on the go.",1,2022-01-26,Email
+"I had to dispute a charge on my account and the bank was very helpful in getting it resolved quickly.",1,2022-01-28,Twitter
+"I'm really frustrated with the lack of transparency from this bank. They don't make it clear what fees they're charging and why.",0,2022-01-30,Facebook
+"I had a great experience working with this bank to get a mortgage. They were very communicative and helpful throughout the process.",1,2022-02-01,Email
+"This bank's customer service is terrible. They don't seem to care about their customers at all.",0,2022-02-03,Twitter
+"I love the convenience of being able to do all my banking online with this bank. It saves me so much time.",1,2022-02-05,Facebook
+"I'm really disappointed with the way this bank is handling my dispute. They're dragging their feet and not taking my concerns seriously.",0,2022-02-07,Twitter
+"I always feel like I'm in good hands with this bank. They've never let me down.",1,2022-02-09,Email
+"I can't believe this bank is still using such an outdated website. It's so frustrating to use.",0,2022-02-11,Reddit
