@@ -1,0 +1,23 @@
+comments,sentiment,date,source,processed_comment
+"Great customer service from my bank, always prompt and helpful!",POSITIVE,2022-01-02,Twitter,great customer service bank always prompt helpful
+I'm really frustrated with this bank's online banking platform. It's slow and difficult to use.,NEGATIVE,2022-01-03,Facebook,im really frustrated bank online banking platform slow difficult use
+Just received an unexpected refund from my bank - what a nice surprise!,POSITIVE,2022-01-05,Email,received unexpected refund bank nice surprise
+I've been a customer of this bank for years and I've never had any problems. Highly recommended!,POSITIVE,2022-01-07,Twitter,ive customer bank year ive never problem highly recommended
+I can't believe this bank is charging such high fees for overdrafts. Not cool.,NEGATIVE,2022-01-08,Reddit,cant believe bank charging high fee overdraft cool
+I've been trying to get in touch with customer support for hours and can't get through. This is ridiculous.,NEGATIVE,2022-01-10,Twitter,ive trying get touch customer support hour cant get ridiculous
+I appreciate the personalized service I get from my local bank branch. They always remember my name!,POSITIVE,2022-01-12,Facebook,appreciate personalized service get local bank branch always remember name
+I just had a really bad experience with this bank's fraud department. They didn't take my concerns seriously at all.,NEGATIVE,2022-01-14,Twitter,really bad experience bank fraud department didnt take concern seriously
+I love the rewards program from this bank. I get so many cashback bonuses!,POSITIVE,2022-01-16,Email,love reward program bank get many cashback bonus
+I had to wait on hold for over an hour just to speak to a representative. This is not acceptable.,POSITIVE,2022-01-18,Twitter,wait hold hour speak representative acceptable
+I had a problem with my account and the bank's online chat support was very helpful in resolving it quickly.,NEGATIVE,2022-01-20,Facebook,problem account bank online chat support helpful resolving quickly
+I'm really disappointed with the new fees this bank is adding. It feels like they're trying to nickel and dime their customers.,NEGATIVE,2022-01-22,Reddit,im really disappointed new fee bank adding feel like theyre trying nickel dime customer
+I always get great rates on loans from this bank. It's one of the reasons I've stayed a customer for so long.,POSITIVE,2022-01-24,Twitter,always get great rate loan bank one reason ive stayed customer long
+This bank has the best mobile app I've ever used. It's so easy to manage my account on the go.,POSITIVE,2022-01-26,Email,bank best mobile app ive ever used easy manage account go
+I had to dispute a charge on my account and the bank was very helpful in getting it resolved quickly.,NEGATIVE,2022-01-28,Twitter,dispute charge account bank helpful getting resolved quickly
+I'm really frustrated with the lack of transparency from this bank. They don't make it clear what fees they're charging and why.,NEGATIVE,2022-01-30,Facebook,im really frustrated lack transparency bank dont make clear fee theyre charging
+I had a great experience working with this bank to get a mortgage. They were very communicative and helpful throughout the process.,POSITIVE,2022-02-01,Email,great experience working bank get mortgage communicative helpful throughout process
+This bank's customer service is terrible. They don't seem to care about their customers at all.,NEGATIVE,2022-02-03,Twitter,bank customer service terrible dont seem care customer
+I love the convenience of being able to do all my banking online with this bank. It saves me so much time.,POSITIVE,2022-02-05,Facebook,love convenience able banking online bank save much time
+I'm really disappointed with the way this bank is handling my dispute. They're dragging their feet and not taking my concerns seriously.,NEGATIVE,2022-02-07,Twitter,im really disappointed way bank handling dispute theyre dragging foot taking concern seriously
+I always feel like I'm in good hands with this bank. They've never let me down.,POSITIVE,2022-02-09,Email,always feel like im good hand bank theyve never let
+I can't believe this bank is still using such an outdated website. It's so frustrating to use.,NEGATIVE,2022-02-11,Reddit,cant believe bank still using outdated website frustrating use

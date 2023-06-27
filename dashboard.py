@@ -3,12 +3,14 @@ import plotly.express as px
 import plotly.graph_objects as go
 import string
 import dash
+import dash_bootstrap_components as dbc
+import transformers
+from pysentimiento import create_analyzer
 from dash import dcc, html
 from dash.dependencies import Input, Output
 from wordcloud import WordCloud
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
-import dash_bootstrap_components as dbc
 from dash.exceptions import PreventUpdate
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
@@ -23,6 +25,8 @@ from dash.dependencies import Input, Output
 from datetime import datetime
 from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.feature_extraction.text import CountVectorizer
+from bertopic import BERTopic
+
 
 # Load data from CSV files for both customers
 df_customer1 = pd.read_csv('comments.csv')
@@ -30,12 +34,9 @@ df_customer2 = pd.read_csv('bank_comments2.csv')
 df_combined = pd.concat([df_customer1, df_customer2], ignore_index=True)
 
 # Initialize the Dash app
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO])
 
-app = dash.Dash(__name__)
-
-# Set the initial external stylesheets to dbc.themes.SUPERHERO
-app.css.append_css({'external_url': dbc.themes.SUPERHERO})
-
+# Define the layout
 app.layout = html.Div([
     html.Div(id='app-container', className=''),
     html.H1('Customer Sentiment Analysis'),
@@ -61,12 +62,16 @@ app.layout = html.Div([
                     dcc.Graph(id='customer1-word-cloud'),
                 ]),
             ]),
-            dcc.Dropdown(
-                id='customer1-dropdown',
-                options=[{'label': s, 'value': s} for s in df_customer1.source.unique()],
-                multi=True,
-                placeholder='Select source...'
-            ),
+            html.Div(className='row', children=[
+                html.Div(className='six columns', style={'text-align': 'right'}, children=[
+                    dcc.Dropdown(
+                        id='customer1-dropdown',
+                        options=[{'label': s, 'value': s} for s in df_customer1.source.unique()],
+                        multi=True,
+                        placeholder='Select source...'
+                    ),
+                ]),
+            ]),
         ]),
         dcc.Tab(label='Customer 2', value='customer2', children=[
             html.Div(className='row', children=[
@@ -89,12 +94,16 @@ app.layout = html.Div([
                     dcc.Graph(id='customer2-word-cloud'),
                 ]),
             ]),
-            dcc.Dropdown(
-                id='customer2-dropdown',
-                options=[{'label': s, 'value': s} for s in df_customer2.source.unique()],
-                multi=True,
-                placeholder='Select source...'
-            ),
+            html.Div(className='row', children=[
+                html.Div(className='six columns', style={'text-align': 'right'}, children=[
+                    dcc.Dropdown(
+                        id='customer2-dropdown',
+                        options=[{'label': s, 'value': s} for s in df_customer2.source.unique()],
+                        multi=True,
+                        placeholder='Select source...'
+                    ),
+                ]),
+            ]),
         ]),
         dcc.Tab(
             label='Comparative Analysis',
@@ -109,17 +118,7 @@ app.layout = html.Div([
                         html.Div(id='strengths-weaknesses'),  # Updated: use a Div component to display the responses
                     ]),
                 ]),
-                html.Label(
-                    className='toggle-switch',
-                    children=[
-                        dcc.Checklist(
-                            id='dark-mode-toggle',
-                            options=[{'label': 'Dark Mode', 'value': 'dark-mode'}],
-                            value=[]
-                        ),
-                    ]
-                ),
-                
+
                 html.Div(className='row', children=[
                     dcc.Store(id='comment-data', data=df_combined['comments']),  # Store component to hold the comment data
                     html.Div(className='six columns', children=[
@@ -135,6 +134,12 @@ app.layout = html.Div([
 
 
 
+ 
+
+        
+
+
+
 
 
 
@@ -144,15 +149,7 @@ sia = SentimentIntensityAnalyzer()
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english')).union(STOPWORDS)
 openai.api_key = os.getenv("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")
-
-@app.callback(
-    Output('app-container', 'className'),
-    Input('dark-mode-toggle', 'value')
-)
-def update_dark_mode(value):
-    if 'dark-mode' in value:
-        return 'dark-mode'
-    return ''
+emotion_analyzer = create_analyzer(task="emotion", lang="en")
 
 
 # Function to preprocess comments
@@ -180,6 +177,12 @@ def compute_sentiment_scores(comments):
     for comment in comments:
         sentiment_scores.append(sia.polarity_scores(comment)['compound'])
     return sentiment_scores
+def compute_emotion_scores(comments):
+    emotion_scores = []
+    for comment in comments:
+        output = emotion_analyzer.predict(comment)
+        emotion_scores.append(output.output)
+    return emotion_scores
 
 # Define a custom color function based on sentiment scores
 def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
